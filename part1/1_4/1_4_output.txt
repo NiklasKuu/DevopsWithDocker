@@ -1,0 +1,21 @@
+Niklas Kuusisto@DESKTOP-7CUKCKN MINGW64 ~
+$ docker run -d --name ubuntuwebthing -it ubuntu sh -c 'echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website;'
+e6f418690819715c875f872241f43c4f6c1927d44337034faa3542e051fbfe80
+
+Niklas Kuusisto@DESKTOP-7CUKCKN MINGW64 ~
+$ docker exec ubuntuwebthing apt-get update
+
+Niklas Kuusisto@DESKTOP-7CUKCKN MINGW64 ~
+$ docker exec ubuntuwebthing apt-get install curl -y
+
+Niklas Kuusisto@DESKTOP-7CUKCKN MINGW64 ~
+$ winpty docker attach ubuntuwebthing
+helsinki.fi
+Searching..
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>301 Moved Permanently</title>
+</head><body>
+<h1>Moved Permanently</h1>
+<p>The document has moved <a href="http://www.helsinki.fi/">here</a>.</p>
+</body></html>
