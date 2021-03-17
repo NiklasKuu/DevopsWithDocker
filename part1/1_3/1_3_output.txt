@@ -1,0 +1,32 @@
+PS C:\Users\Niklas Kuusisto> docker run -d --rm devopsdockeruh/simple-web-service:ubuntu
+4ef51fb6d93fedee0aec2963587786e0dddaa85cfa74e65261d58e83d47003a2
+PS C:\Users\Niklas Kuusisto> docker exec -it 4ef bash
+root@4ef51fb6d93f:/usr/src/app# ls
+server  text.log
+root@4ef51fb6d93f:/usr/src/app# tail -f ./text.log
+2021-03-17 16:35:55 +0000 UTC
+2021-03-17 16:35:57 +0000 UTC
+2021-03-17 16:35:59 +0000 UTC
+2021-03-17 16:36:01 +0000 UTC
+2021-03-17 16:36:03 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2021-03-17 16:36:05 +0000 UTC
+2021-03-17 16:36:07 +0000 UTC
+2021-03-17 16:36:09 +0000 UTC
+2021-03-17 16:36:11 +0000 UTC
+2021-03-17 16:36:13 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2021-03-17 16:36:15 +0000 UTC
+2021-03-17 16:36:17 +0000 UTC
+2021-03-17 16:36:19 +0000 UTC
+2021-03-17 16:36:21 +0000 UTC
+2021-03-17 16:36:23 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2021-03-17 16:36:25 +0000 UTC
+2021-03-17 16:36:27 +0000 UTC
+2021-03-17 16:36:29 +0000 UTC
+2021-03-17 16:36:31 +0000 UTC
+^C
+root@4ef51fb6d93f:/usr/src/app# exit
+exit
+PS C:\Users\Niklas Kuusisto>
