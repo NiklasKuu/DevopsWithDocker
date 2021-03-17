@@ -1,0 +1,22 @@
+Niklas Kuusisto@DESKTOP-7CUKCKN MINGW64 ~
+$ docker pull devopsdockeruh/simple-web-service:alpine
+
+Niklas Kuusisto@DESKTOP-7CUKCKN MINGW64 ~
+$ docker images
+REPOSITORY                          TAG       IMAGE ID       CREATED       SIZE
+devopsdockeruh/simple-web-service   ubuntu    4e3362e907d5   3 days ago    83MB
+devopsdockeruh/simple-web-service   alpine    fd312adc88e0   3 days ago    15.7MB
+ubuntu                              latest    4dd97cefde62   13 days ago   72.9MB
+
+Niklas Kuusisto@DESKTOP-7CUKCKN MINGW64 ~
+$ docker run -d devopsdockeruh/simple-web-service:alpine
+d92ee4533a95e0f351182b00979c14324295cf5f0e9b4737ebb3ebfceba22510
+
+Niklas Kuusisto@DESKTOP-7CUKCKN MINGW64 ~
+$ docker exec d92ee sh -c 'tail -f ./text.log'
+2021-03-17 17:23:54 +0000 UTC
+2021-03-17 17:23:56 +0000 UTC
+2021-03-17 17:23:58 +0000 UTC
+2021-03-17 17:24:00 +0000 UTC
+2021-03-17 17:24:02 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
