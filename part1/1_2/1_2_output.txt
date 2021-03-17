@@ -1,0 +1,4 @@
+PS C:\Users\Niklas Kuusisto> docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+PS C:\Users\Niklas Kuusisto> docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
