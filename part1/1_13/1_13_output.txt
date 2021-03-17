@@ -1,0 +1,1 @@
+$ docker build -t 1_13_back . && docker run -p 8080:8080 1_13_back
