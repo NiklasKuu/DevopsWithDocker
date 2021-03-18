@@ -1,0 +1,1 @@
+docker build -t 1_14_back ./back/ && docker build -t 1_14_front ./front/ && docker run -d -p 8080:8080 1_14_back && docker run -d -p 5000:5000 1_14_front
