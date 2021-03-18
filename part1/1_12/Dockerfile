@@ -10,5 +10,6 @@ RUN git clone https://github.com/docker-hy/material-applications.git
 WORKDIR /app/material-applications/example-frontend/
 RUN npm install
 RUN npm install -g serve
+RUN npm run build
 EXPOSE 5000
 ENTRYPOINT serve -s -l 5000 build
