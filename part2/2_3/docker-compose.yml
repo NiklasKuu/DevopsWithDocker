@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  front_end: 
+    image: 1_14_front
+    ports:
+      - 5000:5000
+  back_end:
+    image: 1_14_back
+    ports:
+      - 8080:8080
