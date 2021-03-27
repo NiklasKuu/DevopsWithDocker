@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  flask-dev-env:
+    build: . # Build with the Dockerfile here
+    command: flask run # Run npm start as the command
+    environment: 
+      - FLASK_APP=flaskr
+      - FLASK_ENC=development
+    ports: 
+      - 5000:5000 # The app uses port 5000 by default, publish it as 5000
+    volumes:
+      - ./:/usr/src/app # Let us modify the contents of the container locally
+    container_name: flask-dev-env # Container name for convenience
+volumes:
+  flask_dev:
