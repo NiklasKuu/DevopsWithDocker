@@ -13,10 +13,10 @@ RUN npm install -g serve
 ENV REACT_APP_BACKEND_URL=http://localhost:8080
 
 RUN chmod a+x /app/material-applications/example-frontend/
+RUN npm run build
+
 RUN useradd -m appuser
 
 USER appuser
-
-RUN npm run build
 EXPOSE 5000
 ENTRYPOINT serve -s -l 5000 build
