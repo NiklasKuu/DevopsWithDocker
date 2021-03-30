@@ -1,0 +1,1 @@
+run with command: docker build . -t 3_2 && docker run -v /var/run/docker.sock:/var/run/docker.sock 3_2 -r <git repo url> -d <name of dockerhub repo> -u <dockerhub username> -p <dockerhub password>
