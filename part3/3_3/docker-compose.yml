@@ -1,0 +1,47 @@
+version: '3'
+
+services:
+  frontend:
+    build: ./front
+    image: 1_14_front
+    hostname: frontend
+    ports:
+      - 5000:5000
+    depends_on:
+      - backend 
+  cache:
+    image: redis
+    ports:
+      - 6379:6379
+    volumes:
+      - /data:/data
+  backend:
+    build: ./back
+    image: 1_14_back
+    hostname: backend
+    ports:
+      - 8080:8080
+    environment:
+      - REDIS_HOST=cache
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_HOST=database
+      - REQUEST_ORIGIN=*
+  database:
+    image: postgres
+    restart: unless-stopped
+    environment:
+     - POSTGRES_PASSWORD=admin
+     - POSTGRES_USER=admin
+    volumes:
+     - ./database:/var/lib/postgresql/data
+  proxy:
+    image: nginx
+    volumes:
+     - ./nginx.conf:/etc/nginx/nginx.conf
+    ports: 
+     - 80:80
+    depends_on:
+      - frontend
+      - backend 
+      
