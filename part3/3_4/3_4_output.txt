@@ -1,0 +1,5 @@
+Size of backend container before optimization 867.32 MB
+Size of backend container after optimization 740.75 MB
+Size of frontend container before optimization 569.47 MB
+Size of frontend container after optimization 445.87 MB
+
