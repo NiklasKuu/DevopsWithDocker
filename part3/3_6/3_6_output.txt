@@ -1,0 +1,2 @@
+Size of front-end image 121.08 MB
+Size of back-end image 24.2 MB
