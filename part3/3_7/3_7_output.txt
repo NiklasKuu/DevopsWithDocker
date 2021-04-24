@@ -1,0 +1,5 @@
+Image size before changes: 104.16 MB
+Image size after changes: 95.66 MB
+
+Wwitched to a smaller image.
+Created a non-root user that will run the application, instead of the root user
