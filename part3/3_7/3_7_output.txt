@@ -1,5 +1,6 @@
 Image size before changes: 104.16 MB
-Image size after changes: 95.66 MB
+Image size after changes: 59.22 MB
 
-Wwitched to a smaller image.
+Added a build image, which installs all the dependencies with npm.
+Then, used a small alpine version of the image; without npm installed on it, to run the application
 Created a non-root user that will run the application, instead of the root user

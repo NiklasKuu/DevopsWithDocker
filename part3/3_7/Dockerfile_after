@@ -1,9 +1,14 @@
-FROM mhart/alpine-node:12
+FROM mhart/alpine-node:12 as build-stage
 WORKDIR /app/expressdevops
 COPY . ./
 ENV NODE_ENV=production
-RUN npm install --only=prod && \
-    chmod a+x /app/expressdevops && adduser -D appuser
+RUN npm install --only=prod
+
+
+FROM mhart/alpine-node:slim-12
+WORKDIR /app/expressdevops
+COPY --from=build-stage /app/expressdevops /app/expressdevops
+RUN    chmod a+x /app/expressdevops && adduser -D appuser
 USER appuser
 EXPOSE 3000
-CMD ["npm", "start"]
+CMD node ./bin/www
